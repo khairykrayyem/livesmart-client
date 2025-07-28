@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register - Live Smart</title>
+</head>
+<body style="display: flex; justify-content: center; align-items: center; height: 100vh; font-family: sans-serif; background: #f5f5f5;">
+
+  <div style="width: 350px; padding: 20px; background: white; border-radius: 10px; text-align: center; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+
+    <div style="width: 100px; height: 100px; margin: 0 auto 10px auto; border-radius: 50%; background-color: #e0e0e0; display: flex; align-items: center; justify-content: center;">
+      <span style="font-size: 30px;">📶</span>
+    </div>
+
+    <p style="margin: 15px 0;">welcome to a life that is simpler and more secure.</p>
+
+    <form id="registerForm" style="display: flex; flex-direction: column; gap: 10px;">
+      <input type="text" id="firstName" placeholder="First Name" required />
+      <input type="text" id="lastName" placeholder="Last Name" required />
+      <input type="email" id="email" placeholder="E-mail" required />
+      <input type="text" id="phone" placeholder="Phone Number" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <input type="password" id="confirmPassword" placeholder="Confirm Password" required />
+
+      <button type="submit" style="padding: 10px; background-color: royalblue; color: white; font-weight: bold; border: none; border-radius: 5px;">LOGIN</button>
+    </form>
+
+    <p style="margin-top: 15px;">Already have an account? <a href="login.html">login</a></p>
+    <p id="reg-error" style="color: red; margin-top: 10px;"></p>
+  </div>
+
+  <script>
+    const form = document.getElementById("registerForm");
+    const errorDisplay = document.getElementById("reg-error");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const firstName = document.getElementById("firstName").value;
+      const lastName = document.getElementById("lastName").value;
+      const email = document.getElementById("email").value;
+      const phone = document.getElementById("phone").value;
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirmPassword").value;
+
+      if (password !== confirmPassword) {
+        errorDisplay.textContent = "Passwords do not match!";
+        return;
+      }
+
+      try {
+        const res = await fetch("http://localhost:5000/api/users/register", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            name: firstName + " " + lastName,
+            email,
+            phone,
+            password
+          })
+        });
+
+        const data = await res.json();
+
+        if (res.ok) {
+          alert("Account created successfully!");
+          window.location.href = "login.html";
+        } else {
+          errorDisplay.textContent = data.message || "Registration failed";
+        }
+      } catch (err) {
+        errorDisplay.textContent = "Server error. Try again.";
+      }
+    });
+  </script>
+
+</body>
+</html>
