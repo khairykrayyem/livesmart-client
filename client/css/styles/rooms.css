@@ -1,0 +1,22 @@
+/* client/css/rooms.css */
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #f4f4f4;
+}
+
+#roomsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.room-card {
+  background: white;
+  border: 1px solid #ccc;
+  padding: 12px;
+  width: 200px;
+  border-radius: 8px;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+}

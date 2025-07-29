@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("http://localhost:5000/api/devices") // ודא שזו הכתובת הנכונה
+  fetch(`${API_BASE_URL}/api/users/`) // ודא שזו הכתובת הנכונה
     .then(res => res.json())
     .then(devices => {
       const list = document.getElementById("device-list");

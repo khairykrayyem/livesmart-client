@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 async function loadUsers() {
-  const res = await fetch('http://localhost:5000/api/users');
+  const res = await fetch(`${API_BASE_URL}/api/users`);
   const users = await res.json();
   const container = document.getElementById('smart-users-container');
   users.forEach(user => {
@@ -17,7 +17,7 @@ async function loadUsers() {
 }
 
 async function loadDevices() {
-  const res = await fetch('http://localhost:5000/api/devices');
+  const res = await fetch(`${API_BASE_URL}/api/users`);
   const devices = await res.json();
   const container = document.getElementById('devices-container');
   devices.forEach(device => {
@@ -29,7 +29,7 @@ async function loadDevices() {
 }
 
 async function loadRooms() {
-  const res = await fetch('http://localhost:5000/api/rooms');
+  const res = await fetch(`${API_BASE_URL}/api/users`);
   const rooms = await res.json();
   const container = document.getElementById('rooms-container');
   rooms.forEach(room => {
