@@ -11,51 +11,20 @@
     <!-- עיגול לוגו -->
     <div class="logo-circle">
       <img src="../images/logo.jpeg" alt="Logo" class="logo-image" />
-   </div>
+    </div>
 
     <h2 class="login-title">Live Smart</h2>
 
     <form id="loginForm" class="login-form">
-      <input type="text" id="email" placeholder="E-mail or Phone Number" required class="login-input" />
+      <input type="text" id="username" placeholder="Username or Email" required class="login-input" />
       <input type="password" id="password" placeholder="Password" required class="login-input" />
-      <a href="#" class="forgot-link">FORGET PASSWORD ?</a>
+      <a href="#" class="forgot-link">FORGET PASSWORD?</a>
       <button type="submit" class="login-button">LOGIN</button>
-   </form>
+    </form>
 
     <p id="error" class="error-message"></p>
   </div>
 
-  <script>
-    const form = document.getElementById("loginForm");
-    const errorDisplay = document.getElementById("error");
-
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const email = document.getElementById("email").value;
-      const password = document.getElementById("password").value;
-
-      try {
-        const res = await fetch("http://localhost:5000/api/users/login", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({ email, password })
-        });
-
-        const data = await res.json();
-
-        if (res.ok) {
-          localStorage.setItem("token", data.token);
-          window.location.href = "dashboard.html";
-        } else {
-          errorDisplay.textContent = data.message || "Login failed";
-        }
-      } catch (err) {
-        errorDisplay.textContent = "Error connecting to server";
-      }
-    });
-  </script>
-
+  <script type="module" src="../js/scripts/login.js" defer></script>
 </body>
 </html>
