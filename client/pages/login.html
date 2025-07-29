@@ -4,30 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Login - Live Smart</title>
+  <link rel="stylesheet" href="../css/style.css" />
 </head>
-<body style="display: flex; justify-content: center; align-items: center; height: 100vh; font-family: sans-serif; background: #f5f5f5;">
-
-  <div style="width: 320px; padding: 20px; background: white; border-radius: 10px; text-align: center; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-
+<body class="login-body"> 
+  <div class="login-box">
     <!-- עיגול לוגו -->
-    <div style="width: 100px; height: 100px; margin: 0 auto 10px auto; border-radius: 50%; background-color: #e0e0e0; display: flex; align-items: center; justify-content: center;">
-      <span style="font-size: 30px;">📶</span>
-    </div>
+    <div class="logo-circle">
+      <img src="../images/logo.jpeg" alt="Logo" class="logo-image" />
+   </div>
 
-    <h2 style="margin-bottom: 20px;">Live Smart</h2>
+    <h2 class="login-title">Live Smart</h2>
 
-    <form id="loginForm" style="display: flex; flex-direction: column; gap: 15px;">
+    <form id="loginForm" class="login-form">
+      <input type="text" id="email" placeholder="E-mail or Phone Number" required class="login-input" />
+      <input type="password" id="password" placeholder="Password" required class="login-input" />
+      <a href="#" class="forgot-link">FORGET PASSWORD ?</a>
+      <button type="submit" class="login-button">LOGIN</button>
+   </form>
 
-      <input type="text" id="email" placeholder="E-mail or Phone Number" required style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;" />
-      
-      <input type="password" id="password" placeholder="Password" required style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;" />
-
-      <a href="#" style="font-size: 12px; color: blue; text-decoration: underline;">FORGET PASSWORD ?</a>
-
-      <button type="submit" style="padding: 10px; border: none; background-color: royalblue; color: white; font-weight: bold; border-radius: 5px;">LOGIN</button>
-    </form>
-
-    <p id="error" style="color: red; margin-top: 10px;"></p>
+    <p id="error" class="error-message"></p>
   </div>
 
   <script>

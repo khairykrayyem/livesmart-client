@@ -1,0 +1,300 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background:url('../images/startBG.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+p {
+  font-family: 'Sansation Light', cursive;
+  color: black;
+  font-size: 23 px;
+}
+
+.main-button {
+  background-color: #CAB7AC;
+  color: black;
+  padding: 30px 48px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 10px;
+  transition: background-color 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main-button:hover { 
+  background-color: #009f8b;
+}
+/****************************************************************************************************************/
+/*sign in  עיצוב כללי לדף */
+body.login-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background:url('../images/signinBG.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;;
+}
+
+/* הקופסה של הטופס */
+.login-box {
+  width: 320px;
+  padding: 30px 20px;
+  background: rgba(255, 255, 255, 0);
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* עיגול הלוגו */
+.logo-circle {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo-image {
+  width: 80px;       /* אפשר להתאים לפי הצורך */
+  height: 80px;      /* לשמור על יחס גובה-רוחב */
+  border-radius: 50%; /* עיגול */
+  object-fit: cover;  /* כדי שהתמונה תתאים בתוך העיגול בלי עיוות */
+  display: block;
+  margin: auto;
+}
+
+/* כותרת */
+.login-title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* טופס */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  
+}
+
+/* שדות */
+.login-input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.login-input:focus {
+  outline: none;
+  border-color: #009f8b;
+  box-shadow: 0 0 5px #009f8b66;
+}
+
+/* קישור "שכחתי סיסמה" */
+.forgot-link {
+  font-size: 12px;
+  color: #0077cc;
+  text-decoration: underline;
+  text-align: left;
+  display: block;
+  margin-top: -10px;
+}
+
+/* כפתור התחברות */
+.login-button {
+  padding: 10px;
+  background-color: #0077cc;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer; 
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #005fa3;
+}
+
+/* הודעת שגיאה */
+.error-message {
+  color: red;
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+/****************************************************************************************************************/
+
+/*sign up  עיצוב כללי לדף */
+body.register-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background:url('../images/signupBG.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;;
+}
+.register-box {
+  width: 320px;
+  padding: 30px 20px;
+  background: rgba(255, 255, 255, 0);
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+/****************************************************************************************************************/
+/*add device עיצוב כללי לדף */
+body.add-device-page {
+  background:url('../images/signupBG.jpeg');
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form-card {
+  background-color: #2a2d35;
+  padding: 30px;
+  border-radius: 16px;
+  width: 350px;
+  box-shadow: 0 0 20px rgba(0, 200, 179, 0.2);
+}
+
+.title {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+.device-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-input {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  text-align: center;
+  background-color: #e6e6e6;
+}
+
+.main-button {
+  padding: 12px;
+  background-color: #00c8b3;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #0e1c36;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.main-button:hover {
+  background-color: #009f8b;
+}
+
+.error-message {
+  margin-top: 10px;
+  color: #ff6b6b;
+  text-align: center;
+}
+/********************************************************************************************************************/
+/*admin עיצוב כללי לדף */
+body.admin-page {
+  background:url('../images/randomBG.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 30px;
+}
+ 
+.admin-box {
+
+  width: 320px;
+  padding: 30px 20px;
+  background: rgba(26, 25, 25, 0.438);
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+/* עיגול הפרופיל */
+.profile-circle {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.profile-image {
+  width: 80px;       /* אפשר להתאים לפי הצורך */
+  height: 80px;      /* לשמור על יחס גובה-רוחב */
+  border-radius: 50%; /* עיגול */
+  object-fit: cover;  /* כדי שהתמונה תתאים בתוך העיגול בלי עיוות */
+  display: block;
+  margin: auto;
+}
+.title {
+  text-align: center;
+  font-size: 15px;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.admin-section {
+  margin-bottom: 40px;
+}
+
+.admin-section h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.main-button {
+  padding: 5px 20px;
+  background-color: #CAB7AC;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 15px;
+  display: flex
+  
+}
+
+.item-list {
+  background-color: rgba(214, 172, 123, 0.842);
+  padding: 5px;
+  border-radius: 15px;
+  min-height: 10px;
+}

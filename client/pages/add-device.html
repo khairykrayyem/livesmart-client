@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Add Device - Live Smart</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body class="page add-device-page">
+
+  <div class="form-card">
+    <h1 class="title">Add a New Device</h1>
+
+    <form id="deviceForm" class="device-form">
+      <input type="text" id="deviceName" class="form-input" placeholder="Device Name" required />
+      
+      <select id="deviceType" class="form-input" required>
+        <option value="">Device Type</option>
+        <option value="light">Light</option>
+        <option value="thermostat">Thermostat</option>
+        <option value="camera">Camera</option>
+        <option value="lock">Smart Lock</option>
+        <option value="sensor">Sensor</option>
+      </select>
+
+      <input type="text" id="roomName" class="form-input" placeholder="Room Name" required />
+
+      <button type="submit" class="main-button">Add Device</button>
+    </form>
+
+    <p id="device-error" class="error-message"></p>
+  </div>
+
+  <script>
+    const form = document.getElementById("deviceForm");
+    const errorDisplay = document.getElementById("device-error");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const deviceName = document.getElementById("deviceName").value;
+      const deviceType = document.getElementById("deviceType").value;
+      const roomName = document.getElementById("roomName").value;
+
+      try {
+        const res = await fetch("http://localhost:5000/api/devices", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: deviceName,
+            type: deviceType,
+            room: roomName
+          })
+        });
+
+        const data = await res.json();
+
+        if (res.ok) {
+          alert("Device added!");
+          form.reset();
+        } else {
+          errorDisplay.textContent = data.message || "Failed to add device.";
+        }
+      } catch (err) {
+        errorDisplay.textContent = "Server error.";
+      }
+    });
+  </script>
+
+</body>
+</html>
