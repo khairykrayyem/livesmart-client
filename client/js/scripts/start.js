@@ -1,12 +1,3 @@
-document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("registerBtn").addEventListener("click", () => {
-    window.location.href = "register.html";
-  });
-
-  document.getElementById("loginBtn").addEventListener("click", () => {
-    window.location.href = "login.html";
-  });
-
 fetch("https://livesmart-server.onrender.com/")
   .then(res => res.text()) 
   .then(data => {
@@ -16,4 +7,3 @@ fetch("https://livesmart-server.onrender.com/")
     console.error("❌ Server connection failed:", err);
   });
 
-});
