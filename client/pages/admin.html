@@ -6,62 +6,78 @@
   <title>Admin Panel - Live Smart</title>
   <link rel="stylesheet" href="../css/style.css" />
 </head>
-<body class="page admin-page">
-     <div class="admin-box">
-        <!--עיגול תמונת פרופיל -->
-    <div class="profile-circle">
-      <img src="../images/profilepic1.jpeg" alt="profile" class="profile-image" />
-   </div>
-  <header>
-    <h1 class="title">Hi Sam , Welcome to your smart home</h1>
-  </header>
+<body class="admin-page">
 
-  <section class="admin-section">
-    <button class="main-button" onclick="window.location.href='smartyusers.html'">Smarty users</button>
-    <div id="users-list" class="users-list"></div>
-  </section>
+    <div class="admin-box">
 
-  <section class="admin-section">
-    <h2>Rooms</h2>
-    <button class="main-button" onclick="addRoom()">Rooms Category</button>
-    <div id="room-list" class="item-list"></div>
-  </section>
+    <header>
+      <div class="top-bar">
+        <img src="../images/Menuicon.jpeg" class="icon">
+        <img src="../images/settingicon.jpeg" class="icon">
+      </div>
 
-  <section class="admin-section">
-    <h2>Pending Access Requests</h2>
-    <div id="request-list" class="item-list"></div>
-  </section>
-    </div>
-  <script>
-    // כאן נשלב קריאות לשרת - טיוטא ראשונית
-    document.addEventListener("DOMContentLoaded", async () => {
-      loadDevices();
-      loadRooms();
-      loadRequests();
-    });
+      <div class="profile-section">
+        <img src="../images/profilepic1.jpeg" alt="profile" class="profile-image" />
+        <h2>Hi Sam</h2>
+        <p>Welcome to your smart home.</p>
 
-    async function loadDevices() {
-      // TODO: פנייה לשרת
-      document.getElementById("device-list").innerHTML = "<p>No devices yet.</p>";
-    }
+        <div class="users-section">
+          <span class="label">Smarty Users</span>
+          <div class="users">
+            <img src="../images/user1.jpeg">
+            <img src="../images/user2.jpeg">
+            <img src="../images/user3.jpeg">
+          </div>
+        </div>
+      </div>
+    </header>
 
-    async function loadRooms() {
-      // TODO: פנייה לשרת
-      document.getElementById("room-list").innerHTML = "<p>No rooms yet.</p>";
-    }
+    <section class="devices">
+      <h3>Devices</h3>
+      <div class="device-buttons">
+        <div class="device">
+          <img src="../images/sec.cam.jpeg">
+          <span>Cameras</span>
+        </div>
+        <div class="device active">
+          <img src="../images/vacc.device.jpeg">
+          <span>Vacuuming</span>
+        </div>
+        <div class="device">
+          <img src="../images/ac.device.jpeg">
+          <span>AC</span>
+        </div>
+      </div>
+    </section>
 
-    async function loadRequests() {
-      // TODO: פנייה לשרת
-      document.getElementById("request-list").innerHTML = "<p>No requests yet.</p>";
-    }
-
-    function addRoom() {
-      const name = prompt("Enter new room name:");
-      if (name) {
-        // TODO: שליחת room חדש לשרת
-        alert("Room '" + name + "' added.");
-      }
-    }
-  </script>
+    <section class="rooms">
+      <h3>Rooms Category</h3>
+      <div class="room-list">
+        <div class="room">
+          <img src="../images/startBG.jpeg">
+          <div class="overlay">
+            <p>Living Room</p>
+            <span>2/7</span>
+          </div>
+        </div>
+        <div class="room">
+          <img src="../images/bedroomBG.jpeg">
+          <div class="overlay">
+            <p>BedRoom</p>
+            <span>4/10</span>
+          </div>
+        </div>
+        <div class="room">
+          <img src="../images/kitchenBG.jpeg">
+          <div class="overlay">
+            <p>Kitchen</p>
+            <span>7/10</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  </div>
 </body>
 </html>
+
