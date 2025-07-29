@@ -8,73 +8,29 @@
 </head>
 <body class="register-body">
   <div class="register-box">
-     <!-- עיגול לוגו -->
     <div class="logo-circle">
       <img src="../images/logo.jpeg" alt="Logo" class="logo-image" />
-   </div>
-   <p class="welcome-text">welcome to a life that is simpler and more secure.</p>
+    </div>
+    <p class="welcome-text">Welcome to a life that is simpler and more secure.</p>
 
-    <form id="loginForm" class="login-form">
-      <input type="text" id="First Name" placeholder="First Name" required class="login-input" />
-      <input type="text" id="lastName" placeholder="Last Name" required  class="login-input" />
-      <input type="email" id="email" placeholder="E-mail" required  class="login-input" />
-      <input type="text" id="phone" placeholder="Phone Number" required  class="login-input"/>
-      <input type="password" id="password" placeholder="Password" required  class="login-input" />
-      <input type="password" id="confirmPassword" placeholder="Confirm Password" required  class="login-input" />
-
-      <button type="submit" class="login-button">LOGIN</button>
+    <form id="registerForm" class="login-form">
+      <input type="text" id="username" placeholder="Username" required class="login-input" />
+      <input type="password" id="password" placeholder="Password" required class="login-input" />
+      <input type="password" id="confirmPassword" placeholder="Confirm Password" required class="login-input" />
+      <select id="role" required class="login-input">
+        <option value="">Select Role</option>
+        <option value="user">User</option>
+        <option value="admin">Admin</option>
+      </select>
+      <button type="submit" class="login-button">Register</button>
     </form>
 
-    <p class="have-account-text">  Already have an account? <a href="login.html">login</a> </p>
-    <p id="error" class="error-message"></p>
+    <p class="have-account-text">Already have an account? <a href="login.html">Login</a></p>
+    <p id="reg-error" class="error-message"></p>
   </div>
 
-  <script>
-    const form = document.getElementById("registerForm");
-    const errorDisplay = document.getElementById("reg-error");
-
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-
-      const firstName = document.getElementById("firstName").value;
-      const lastName = document.getElementById("lastName").value;
-      const email = document.getElementById("email").value;
-      const phone = document.getElementById("phone").value;
-      const password = document.getElementById("password").value;
-      const confirmPassword = document.getElementById("confirmPassword").value;
-
-      if (password !== confirmPassword) {
-        errorDisplay.textContent = "Passwords do not match!";
-        return;
-      }
-
-      try {
-        const res = await fetch("http://localhost:5000/api/users/register", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-            name: firstName + " " + lastName,
-            email,
-            phone,
-            password
-          })
-        });
-
-        const data = await res.json();
-
-        if (res.ok) {
-          alert("Account created successfully!");
-          window.location.href = "login.html";
-        } else {
-          errorDisplay.textContent = data.message || "Registration failed";
-        }
-      } catch (err) {
-        errorDisplay.textContent = "Server error. Try again.";
-      }
-    });
-  </script>
-
+  <!-- JS files -->
+  <script src="../js/config.js" defer></script>
+  <script src="../js/scripts/register.js" defer></script>
 </body>
 </html>
