@@ -1,0 +1,100 @@
+body.register-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background:url('../../images/signupBG.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;;
+}
+
+/*הקופסה של הטופס */
+.login-box {
+  width: 320px;
+  padding: 30px 20px;
+  background: rgba(255, 255, 255, 0);
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* עיגול הלוגו */
+.logo-circle {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo-image {
+  width: 80px;       /* אפשר להתאים לפי הצורך */
+  height: 80px;      /* לשמור על יחס גובה-רוחב */
+  border-radius: 50%; /* עיגול */
+  object-fit: cover;  /* כדי שהתמונה תתאים בתוך העיגול בלי עיוות */
+  display: block;
+  margin: auto;
+}
+
+/* כותרת */
+.login-title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+.register-box {
+  width: 320px;
+  padding: 30px 20px;
+  background: rgba(255, 255, 255, 0);
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+/* כפתור התחברות */
+.login-button {
+  padding: 10px;
+  background-color: #0077cc;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer; 
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #005fa3;
+}
+
+/* הודעת שגיאה */
+.error-message {
+  color: red;
+  margin-top: 10px;
+  font-size: 13px;
+}
+/* טופס */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  
+}
+
+/* שדות */
+.login-input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.login-input:focus {
+  outline: none;
+  border-color: #009f8b;
+  box-shadow: 0 0 5px #009f8b66;
+}

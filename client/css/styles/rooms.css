@@ -1,9 +1,9 @@
-/* client/css/rooms.css */
+/* client/css/rooms.css 
 
 body {
   font-family: Arial, sans-serif;
   padding: 20px;
-  background: #f4f4f4;
+  background : url('../../images/devicesBG.jpeg');
 }
 
 #roomsContainer {
@@ -19,4 +19,50 @@ body {
   width: 200px;
   border-radius: 8px;
   box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+}
+*/
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background : url('../../images/devicesBG.jpeg');
+  margin: 0;
+  padding: 30px;
+}
+
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 40px;
+}
+
+.room-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+
+.room-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 20px;
+  width: 260px;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.room-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.room-card h3 {
+  margin: 0 0 10px;
+  color: #34495e;
+}
+
+.room-card p {
+  margin: 6px 0;
+  color: #555;
+  font-size: 0.95rem;
 }
