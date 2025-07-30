@@ -29,13 +29,20 @@ form.addEventListener("submit", async (e) => {
     return;
   }
 
+  // שליפת תפקיד המשתמש המחובר מ־localStorage
+  const currentUserRole = localStorage.getItem("role");
+  if (!currentUserRole || currentUserRole !== "admin") {
+    errorDisplay.textContent = "Only admins can create new users";
+    return;
+  }
+
   try {
     const res = await authFetch("https://livesmart-server.onrender.com/api/users/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ username, password, role }),
+      body: JSON.stringify({ username, password, role, currentUserRole }),
     });
 
     const data = await res.json();
