@@ -28,6 +28,7 @@ window.togglePopup = function(id) {
   const popup = document.getElementById(id);
   popup.style.display = popup.style.display === "block" ? "none" : "block";
 };
+  
 
 
 async function loadDevices() {
