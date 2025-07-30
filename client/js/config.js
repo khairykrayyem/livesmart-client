@@ -1,19 +1,22 @@
 export const API_BASE_URL = "https://livesmart-server.onrender.com";
 
-
-// במקום export function
-function authFetch(url, options = {}) {
+export async function authFetch(url, options = {}) {
   const token = localStorage.getItem("token");
-  const headers = options.headers || {};
 
-  if (token) {
-    headers.Authorization = `Bearer ${token}`;
-  }
+  const headers = {
+    ...options.headers,
+    Authorization: `Bearer ${token}`,
+    "Content-Type": "application/json",
+  };
 
-  return fetch(url, {
+  const response = await fetch(url, {
     ...options,
     headers,
   });
+
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+
+  return response; // שים לב: לא עושים response.json() כאן
 }
-
-
