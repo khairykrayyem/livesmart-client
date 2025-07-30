@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Admin Panel - Live Smart</title>
-  <link rel="stylesheet" href="../client/css/styles/admin.css" />
+  <link rel="stylesheet" href="../css/styles/admin.css" />
 </head>
 <body class="admin-page">
 
-    <div class="admin-box">
+  <div class="admin-box">
 
     <header>
       <div class="top-bar">
@@ -22,18 +22,19 @@
         <p>Welcome to your smart home.</p>
 
         <div class="users-section">
-          <span class="label">Smarty Users</span>
-          <div class="users">
-            <img src="../images/user1.jpeg">
-            <img src="../images/user2.jpeg">
-            <img src="../images/user3.jpeg">
+          <div class="section-title">
+            <h2>Smart Users</h2>
+            <button class="edit-btn" data-popup="user-popup">✏️</button>
           </div>
         </div>
       </div>
     </header>
 
     <section class="devices">
-      <h3>Devices</h3>
+      <div class="section-title">
+        <h3>Devices</h3>
+        <button class="edit-btn" data-popup="device-popup">✏️</button>
+      </div>
       <div class="device-buttons">
         <div class="device">
           <img src="../images/sec.cam.jpeg">
@@ -51,7 +52,10 @@
     </section>
 
     <section class="rooms">
-      <h3>Rooms Category</h3>
+      <div class="section-title">
+        <h3>Rooms Category</h3>
+        <button class="edit-btn" data-popup="room-popup">✏️</button>
+      </div>
       <div class="room-list">
         <div class="room">
           <img src="../images/startBG.jpeg">
@@ -76,8 +80,48 @@
         </div>
       </div>
     </section>
+
+    <!-- Popups -->
+    <div id="user-popup" class="popup">
+      <div class="popup-content">
+        <span class="close-btn" data-popup="user-popup">&times;</span>
+        <iframe src="add-user.html" frameborder="0"></iframe>
+      </div>
+    </div>
+
+    <div id="device-popup" class="popup">
+      <div class="popup-content">
+        <span class="close-btn" data-popup="device-popup">&times;</span>
+        <iframe src="add-device.html" frameborder="0"></iframe>
+      </div>
+    </div>
+
+    <div id="room-popup" class="popup">
+      <div class="popup-content">
+        <span class="close-btn" data-popup="room-popup">&times;</span>
+        <iframe src="add-room.html" frameborder="0"></iframe>
+      </div>
+    </div>
+
   </div>
-  </div>
+
+  <script type="module" src="../js/scripts/admin.js"></script>
+  <script>
+    // Popup logic
+    document.querySelectorAll(".edit-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const popupId = btn.getAttribute("data-popup");
+        document.getElementById(popupId).style.display = "flex";
+      });
+    });
+
+    document.querySelectorAll(".close-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const popupId = btn.getAttribute("data-popup");
+        document.getElementById(popupId).style.display = "none";
+      });
+    });
+  </script>
+
 </body>
 </html>
-
