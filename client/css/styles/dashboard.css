@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background: rgb(192, 142, 142);
+  background: url();
   margin: 0;
   padding: 20px;
 }
@@ -45,10 +45,41 @@ section {
 }
 
 .card {
-  background: rgb(241, 238, 238);
+  background: rgb(90, 33, 196);
   border-radius: 8px;
   padding: 12px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   width: 150px;
   text-align: center;
+}
+
+/* קו עיצוב אחיד לכל הכרטיסים */
+.user-card, .device-card, .room-card {
+  background-color: #3a9b52;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  width: 180px;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 10px;
+  transition: transform 0.2s ease;
+}
+
+.user-card:hover, .device-card:hover, .room-card:hover {
+  transform: scale(1.03);
+}
+
+/* סידור בשורה עם גלילה אם צריך */
+.horizontal-scroll,
+.device-list,
+.room-list {
+  display: flex;
+  overflow-x: auto;
+  padding: 10px 0;
+  gap: 12px;
 }
