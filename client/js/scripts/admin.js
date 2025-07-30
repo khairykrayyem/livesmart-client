@@ -24,6 +24,11 @@ async function loadUsers() {
     console.error("Error loading users", err);
   }
 }
+window.togglePopup = function(id) {
+  const popup = document.getElementById(id);
+  popup.style.display = popup.style.display === "block" ? "none" : "block";
+};
+
 
 async function loadDevices() {
   try {
@@ -72,4 +77,5 @@ async function loadRooms() {
   } catch (err) {
     console.error("Error loading rooms", err);
   }
+
 }
