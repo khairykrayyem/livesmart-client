@@ -1,21 +1,43 @@
 body {
   font-family: Arial, sans-serif;
-  background: #f8f8f8;
+  background: rgb(192, 142, 142);
   margin: 0;
   padding: 20px;
 }
 
-.dashboard-container {
-  max-width: 900px;
-  margin: auto;
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.514);
+  text-align: center;
+  margin-top: 10px;
+
+}
+
+ h2{
+  text-align: center;
 }
 
 section {
+  text-align: center;
   margin-top: 30px;
 }
 
-#smart-users-container,
-#devices-container,
+.information-sec{
+  text-align: center;
+   margin-top: 30px;
+}
+
+#smart-users-container
+#devices-container
 #rooms-container {
   display: flex;
   flex-wrap: wrap;
@@ -23,7 +45,7 @@ section {
 }
 
 .card {
-  background: white;
+  background: rgb(241, 238, 238);
   border-radius: 8px;
   padding: 12px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
