@@ -81,47 +81,7 @@
       </div>
     </section>
 
-    <!-- Popups -->
-    <div id="user-popup" class="popup">
-      <div class="popup-content">
-        <span class="close-btn" data-popup="user-popup">&times;</span>
-        <iframe src="add-user.html" frameborder="0"></iframe>
-      </div>
-    </div>
 
-    <div id="device-popup" class="popup">
-      <div class="popup-content">
-        <span class="close-btn" data-popup="device-popup">&times;</span>
-        <iframe src="add-device.html" frameborder="0"></iframe>
-      </div>
-    </div>
-
-    <div id="room-popup" class="popup">
-      <div class="popup-content">
-        <span class="close-btn" data-popup="room-popup">&times;</span>
-        <iframe src="add-room.html" frameborder="0"></iframe>
-      </div>
-    </div>
-
-  </div>
-
-  <script type="module" src="../js/scripts/admin.js"></script>
-  <script>
-    // Popup logic
-    document.querySelectorAll(".edit-btn").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const popupId = btn.getAttribute("data-popup");
-        document.getElementById(popupId).style.display = "flex";
-      });
-    });
-
-    document.querySelectorAll(".close-btn").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const popupId = btn.getAttribute("data-popup");
-        document.getElementById(popupId).style.display = "none";
-      });
-    });
-  </script>
-
+    
 </body>
 </html>
