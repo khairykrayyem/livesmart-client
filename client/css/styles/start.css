@@ -5,7 +5,7 @@ body {
   justify-content: center;
   height: 100vh;
   margin: 0;
-  background:url('../css/images/startBG.jpeg');
+  background:url('../../images/startBG.jpeg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
