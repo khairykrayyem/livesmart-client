@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background: url('../../images/dashBG.jpeg');
+  background: url('../../images/dGB.jpeg');
   margin: 0;
   padding: 20px;
 }
@@ -55,7 +55,7 @@ section {
 
 /* קו עיצוב אחיד לכל הכרטיסים */
 .user-card, .device-card, .room-card {
-  background-color: #3a9b52;
+  background-color: #cfaf6a;
   border-radius: 12px;
   padding: 16px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
@@ -78,7 +78,7 @@ section {
 .horizontal-scroll,
 .device-list,
 .room-list {
-  display: flex;
+  display: center;
   overflow-x: auto;
   padding: 10px 0;
   gap: 12px;
