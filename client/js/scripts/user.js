@@ -1,4 +1,4 @@
-import { authFetch, API_BASE_URL } from '/client/js/config.js';
+import { authFetch, API_BASE_URL } from '../scripts/config';
 
 
 document.addEventListener("DOMContentLoaded", () => {
