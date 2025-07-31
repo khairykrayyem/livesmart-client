@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   loadRooms();
   loadDeviceRequests()
   initAddUserModal()
+  initAddRoomModal();
 });
 
 async function loadUsers() {
@@ -205,3 +206,60 @@ function initAddUserModal() {
     }
   });
 }
+function initAddRoomModal() {
+  const openBtn = document.querySelector('.rooms .edit-btn[data-popup="room-popup"]')
+                || document.querySelector('.rooms .edit-btn');
+  const modal   = document.getElementById('add-room-modal');
+  const form    = document.getElementById('add-room-form');
+  const cancel  = document.getElementById('ar-cancel');
+  const submit  = document.getElementById('ar-submit');
+
+  if (!openBtn || !modal || !form) return;
+
+  const open = () => {
+    modal.classList.remove('hidden');
+    modal.setAttribute('aria-hidden', 'false');
+    document.getElementById('ar-name')?.focus();
+  };
+  const close = () => {
+    modal.classList.add('hidden');
+    modal.setAttribute('aria-hidden', 'true');
+    form.reset();
+  };
+
+  openBtn.addEventListener('click', open);
+  cancel?.addEventListener('click', close);
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const name  = document.getElementById('ar-name')?.value.trim();
+    const floor = Number.parseInt(document.getElementById('ar-floor')?.value, 10);
+    const type  = document.getElementById('ar-type')?.value.trim();
+
+    if (!name || !type || Number.isNaN(floor)) {
+      alert('Please fill name, numeric floor, and type.');
+      return;
+    }
+
+    try {
+      submit.disabled = true;
+      const res = await authFetch(`${API_BASE_URL}/api/rooms`, {
+        method: 'POST',
+        body: JSON.stringify({ name, floor, type })
+      });
+      if (!res.ok) {
+        const msg = await res.text();
+        throw new Error(msg || `HTTP ${res.status}`);
+      }
+      close();
+      await loadRooms?.(); // רענון הרשימה
+      alert('Room created ✅');
+    } catch (err) {
+      console.error('Add room failed:', err);
+      alert('Failed to create room: ' + err.message);
+    } finally {
+      submit.disabled = false;
+    }
+  });
+}
+
