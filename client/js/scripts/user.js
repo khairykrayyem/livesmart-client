@@ -107,7 +107,7 @@ document.getElementById("rooms-container")?.addEventListener("click", async (e) 
   const roomId = btn.dataset.roomId;
 
   // אם יש מודאל ב-HTML (add-device-modal) נשתמש בו; אחרת ניפול ל-prompt
-  if (openDeviceModal?.(roomId)) return;
+  if (typeof openDeviceModal === 'function' && openDeviceModal(roomId)) return;
 
   const name = prompt("Device name");
   if (!name?.trim()) return;
