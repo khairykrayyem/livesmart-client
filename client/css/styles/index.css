@@ -33,3 +33,17 @@ p {
 .main-button:hover { 
   background-color: #147777;
 }
+* Generic button */
+.btn{
+  display:inline-block;
+  padding:10px 20px;
+  border-radius:8px;
+  font-size:16px;
+  text-decoration:none;
+  transition:.2s;
+}
+.btn.primary{
+  background:#4CAF50;
+  color:#fff;
+}
+.btn.primary:hover{ background:#45a049; }
