@@ -1,6 +1,6 @@
 export const API_BASE_URL = "https://livesmart-server.onrender.com";
 
-async function authFetch(url, options = {}) {
+export async function authFetch(url, options = {}) {
   const token = localStorage.getItem("token");
 
   const headers = {
