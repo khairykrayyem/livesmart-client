@@ -22,28 +22,26 @@
         <h2>Hi Sam</h2>
         <p>Welcome to your smart home.</p>
 
-              <div class="users-section">
-        <div class="section-title">
-          <h2>Smart Users</h2>
-          <button class="edit-btn" data-popup="user-popup">✏️</button>
+        <div class="users-section">
+          <div class="section-title">
+            <h2>Smart Users</h2>
+            <button class="edit-btn" data-popup="user-popup">✏️</button>
+          </div>
+
+          <!-- כאן admin.js ירנדר את המשתמשים -->
+          <div class="users"></div>
         </div>
-
-        <!-- חדש: כאן admin.js ירנדר את המשתמשים -->
-        <div class="users"></div>
       </div>
+    </header>
+
+    <!-- Device Requests (Admin) -->
+    <section class="requests">
+      <div class="section-title">
+        <h3>Device Requests</h3>
       </div>
-      </header>
-
-      <!-- Device Requests (Admin) -->
-      <section class="requests">
-        <div class="section-title">
-          <h3>Device Requests</h3>
-        </div>
-        <!-- כאן נרנדר את הבקשות מהשרת -->
-        <div id="requests-list" class="requests-list"></div>
-      </section>
-
-
+      <!-- כאן נרנדר את הבקשות מהשרת -->
+      <div id="requests-list" class="requests-list"></div>
+    </section>
 
     <section class="devices">
       <div class="section-title">
@@ -96,7 +94,40 @@
       </div>
     </section>
 
+  </div>
 
-    
+  <!-- Add User Modal (added) -->
+  <div id="add-user-modal" class="modal hidden" aria-hidden="true">
+    <div class="modal-dialog">
+      <h3>Add User</h3>
+      <form id="add-user-form">
+        <label>
+          Username
+          <input type="text" id="au-username" required>
+        </label>
+        <label>
+          Email
+          <input type="email" id="au-email" required>
+        </label>
+        <label>
+          Password
+          <input type="password" id="au-password" minlength="6" required>
+        </label>
+        <label>
+          Role
+          <select id="au-role">
+            <option value="user" selected>User</option>
+            <option value="admin">Admin</option>
+          </select>
+        </label>
+        <div class="actions">
+          <button type="button" id="au-cancel">Cancel</button>
+          <button type="submit" id="au-submit">Create</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- /Add User Modal -->
+
 </body>
 </html>
