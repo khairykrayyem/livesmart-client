@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   loadDevices();
   loadRooms();
   loadDeviceRequests()
+  initAddUserModal()
 });
 
 async function loadUsers() {
@@ -149,3 +150,58 @@ document.getElementById("requests-list")?.addEventListener("click", async (e) =>
   }
 });
 
+function initAddUserModal() {
+  const openBtn  = document.querySelector('.users-section .edit-btn[data-popup="user-popup"]');
+  const modal    = document.getElementById('add-user-modal');
+  const form     = document.getElementById('add-user-form');
+  const cancel   = document.getElementById('au-cancel');
+  const submit   = document.getElementById('au-submit');
+
+  if (!openBtn || !modal || !form) return;
+
+  openBtn.addEventListener('click', () => {
+    modal.classList.remove('hidden');
+    modal.setAttribute('aria-hidden', 'false');
+    document.getElementById('au-username')?.focus();
+  });
+
+  cancel?.addEventListener('click', () => {
+    modal.classList.add('hidden');
+    modal.setAttribute('aria-hidden', 'true');
+    form.reset();
+  });
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const username = document.getElementById('au-username')?.value.trim();
+    const email    = document.getElementById('au-email')?.value.trim();
+    const password = document.getElementById('au-password')?.value;
+    const role     = document.getElementById('au-role')?.value || 'user';
+    if (!username || !email || !password) return;
+
+    try {
+      submit.disabled = true;
+      const res = await authFetch(`${API_BASE_URL}/api/users/register`, {
+        method: 'POST',
+        body: JSON.stringify({ username, email, password, role })
+      });
+
+      if (res.status === 201 || res.status === 200) {
+        // הצלחה: סגור מודאל, נקה טופס, רענן רשימת משתמשים
+        modal.classList.add('hidden');
+        modal.setAttribute('aria-hidden', 'true');
+        form.reset();
+        await loadUsers?.();
+        alert('User created ✅');
+      } else {
+        const msg = await res.text();
+        alert(`Failed to create user: ${msg}`);
+      }
+    } catch (err) {
+      console.error('Add user failed:', err);
+      alert('Failed to create user: ' + err.message);
+    } finally {
+      submit.disabled = false;
+    }
+  });
+}
