@@ -146,15 +146,4 @@ h2,p{
 }
 #add-room-btn:hover { background: rgba(255,255,255,0.25); }
 
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgb(250, 5, 5); /* רקע כהה שקוף */
-  display: flex;                     /* הופך את האלמנטים הפנימיים לגמישים */
-  justify-content: center;          /* מרכז אופקי */
-  align-items: center;              /* מרכז אנכי */
-  z-index: 1000;
-}
+
