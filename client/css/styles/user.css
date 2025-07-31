@@ -5,7 +5,44 @@ body.dashboard-page {
   font-family: system-ui, Arial, sans-serif;
   color: #fff;
   min-height: 100svh;
-  background: url('/images/randomBG.jpeg') center / cover no-repeat fixed;
+  background: url('/client/images/dGB.jpeg') center / cover no-repeat fixed;
+}
+.top-bar {
+position: relative;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.profile-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  z-index: 1;
+  border: 2px solid white;
+}
+
+/* כפתור תפריט וכפתור הגדרות בצדדים */
+.menu-btn,
+.settings-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+}
+
+.menu-btn {
+  left: 20px;
+}
+
+.settings-btn {
+  right: 20px;
 }
 
 /* קונטיינר מרכזי (אם קיים ב-HTML) */
