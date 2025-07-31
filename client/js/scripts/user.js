@@ -31,6 +31,14 @@ async function loadRooms(userId) {
         <h3>${room.name}</h3>
         <p>${room.devices?.length || 0} Devices</p>
       `;
+                // מיד אחרי card.innerHTML = `...` ובטרם container.appendChild(card);
+          const addBtn = document.createElement('button');
+          addBtn.className = 'add-device-btn';
+          addBtn.title = 'Add device';
+          addBtn.textContent = '＋';
+          addBtn.dataset.roomId = room._id; // חשוב: מזהה החדר
+          card.appendChild(addBtn);
+
       container.appendChild(card);
     });
         // מאזין לכפתור ה-+ (השורה יכולה להישאר במקום שבו יש לך אותה היום)
@@ -91,3 +99,47 @@ async function onAddRoomClick() {
     console.error("Failed to load rooms:", error);
   }
 }
+// Delegation: קליק על כפתור ה-＋ בתוך #rooms-container
+document.getElementById("rooms-container")?.addEventListener("click", async (e) => {
+  const btn = e.target.closest(".add-device-btn");
+  if (!btn) return;
+
+  const roomId = btn.dataset.roomId;
+
+  // אם יש מודאל ב-HTML (add-device-modal) נשתמש בו; אחרת ניפול ל-prompt
+  if (openDeviceModal?.(roomId)) return;
+
+  const name = prompt("Device name");
+  if (!name?.trim()) return;
+
+  const type = prompt("Device type (e.g., camera, ac, vacuum)");
+  if (!type?.trim()) return;
+
+  await submitDevice({ roomId, name: name.trim(), type: type.trim() });
+});
+
+// פונקציה שמבצעת את הקריאה לשרת (תואם ל-API הקיים: POST /api/devices)
+async function submitDevice({ roomId, name, type }) {
+  try {
+    const res = await authFetch(`${API_BASE_URL}/api/devices`, {
+      method: 'POST',
+      body: JSON.stringify({ roomId, name, type })
+    });
+
+    if (res.status === 201) {
+      alert('Device created ✅');
+    } else if (res.status === 202) {
+      alert('Request sent to admin ✅');
+    } else {
+      const msg = await res.text();
+      throw new Error(`Unexpected status ${res.status}: ${msg}`);
+    }
+
+    const userId = localStorage.getItem('userId');
+    if (userId) await loadRooms(userId); // רענון מונה המכשירים
+  } catch (err) {
+    console.error('Device request failed:', err);
+    alert('Failed to send request: ' + err.message);
+  }
+}
+

@@ -26,7 +26,28 @@
           <button id="add-room-btn" aria-label="Add room" title="Add room">＋</button>
       </div>
       <div class="rooms-grid" id="rooms-container"></div>
-</section>
+    </section>
   </div>
-</body>
+    <div id="add-device-modal" class="modal hidden" aria-hidden="true">
+      <div class="modal-dialog">
+        <h3>Add device</h3>
+        <form id="add-device-form">
+          <input type="hidden" name="roomId" id="dev-room-id">
+          <label>
+            Device name
+            <input type="text" id="dev-name" required>
+          </label>
+          <label>
+            Device type
+            <input type="text" id="dev-type" placeholder="camera / ac / vacuum" required>
+          </label>
+          <div class="actions">
+            <button type="button" id="dev-cancel">Cancel</button>
+            <button type="submit" id="dev-submit">Add</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </body>
 </html>
