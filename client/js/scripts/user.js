@@ -33,31 +33,53 @@ async function loadRooms(userId) {
       `;
       container.appendChild(card);
     });
-        // בתוך DOMContentLoaded, אחרי loadRooms(userId):
-      document.getElementById('add-room-btn')?.addEventListener('click', onAddRoomClick);
+        // מאזין לכפתור ה-+ (השורה יכולה להישאר במקום שבו יש לך אותה היום)
+document.getElementById('add-room-btn')?.addEventListener('click', onAddRoomClick);
 
-      async function onAddRoomClick() {
-        const userId = localStorage.getItem('userId');
-        if (!userId) {
-          alert('User not logged in.');
-          return;
-        }
+async function onAddRoomClick() {
+  const userId = localStorage.getItem('userId'); // רק לריענון אחרי יצירה
+  if (!userId) {
+    alert('User not logged in.');
+    return;
+  }
 
-        const name = prompt('Room name');
-        if (!name || !name.trim()) return;
+  // בהתאם ל-API של השרת: name, floor, type
+  const name = prompt('Room name');
+  if (!name || !name.trim()) return;
 
-        try {
-          const res = await authFetch(`${API_BASE_URL}/api/rooms`, {
-            method: 'POST',
-            body: JSON.stringify({ userId, name: name.trim() })
-          });
-          // אם השרת מחזיר 201/200 – נרענן את הרשימה
-          await loadRooms(userId);
-        } catch (err) {
-          console.error('Failed to add room:', err);
-          alert('Failed to add room');
-        }
-      }
+  const floorStr = prompt('Floor number (e.g., 1)');
+  const floor = Number.parseInt(floorStr, 10);
+  if (Number.isNaN(floor)) {
+    alert('Floor must be a number');
+    return;
+  }
+
+  const type = prompt('Room type (e.g., bedroom, kitchen, living)');
+  if (!type || !type.trim()) return;
+
+  try {
+    const res = await authFetch(`${API_BASE_URL}/api/rooms`, {
+      method: 'POST',
+      body: JSON.stringify({
+        name: name.trim(),
+        floor,
+        type: type.trim()
+      })
+    });
+
+    if (res.status !== 201 && res.status !== 200) {
+      const text = await res.text();
+      throw new Error(`Unexpected status ${res.status}: ${text}`);
+    }
+
+    // רענון הרשימה אחרי יצירה מוצלחת
+    await loadRooms(userId);
+  } catch (err) {
+    console.error('Failed to add room:', err);
+    alert('Failed to add room: ' + err.message);
+  }
+}
+
 
     // כפתור "View All"
     const viewAll = document.createElement("div");
