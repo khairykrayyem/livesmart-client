@@ -154,3 +154,9 @@ h2,p{
   justify-content: center;
   margin-bottom: 20px;
 }
+#add-device-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: pink;
+}
