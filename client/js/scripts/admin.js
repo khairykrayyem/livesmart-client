@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   loadUsers();
   loadDevices();
   loadRooms();
+  loadDeviceRequests()
 });
 
 async function loadUsers() {
@@ -80,3 +81,70 @@ async function loadRooms() {
   }
 
 }
+// ---- Device Requests (Admin) ----
+async function loadDeviceRequests() {
+  try {
+    const res = await authFetch(`${API_BASE_URL}/api/device-requests?status=pending`);
+    const requests = await res.json();
+
+    const list = document.getElementById("requests-list");
+    if (!list) return;
+
+    list.innerHTML = "";
+    if (!Array.isArray(requests) || requests.length === 0) {
+      list.innerHTML = `<div class="muted">No pending requests.</div>`;
+      return;
+    }
+
+    requests.forEach(req => {
+      const item = document.createElement("div");
+      item.className = "request-item";
+      item.innerHTML = `
+        <div class="info">
+          <div class="title">${req.name} <span class="type">(${req.type})</span></div>
+          <div class="meta">Room: ${req.roomId || '-' } • By: ${req.requestedByName || req.requestedBy || 'user'}</div>
+        </div>
+        <div class="actions">
+          <button class="approve" data-id="${req._id}" data-action="approve">Approve</button>
+          <button class="reject"  data-id="${req._id}" data-action="reject">Reject</button>
+        </div>
+      `;
+      list.appendChild(item);
+    });
+  } catch (err) {
+    console.error("Error loading device requests", err);
+    const list = document.getElementById("requests-list");
+    if (list) list.innerHTML = `<div class="error">Failed to load requests</div>`;
+  }
+}
+
+// האזנה לפעולות אישור/דחייה (delegation)
+document.getElementById("requests-list")?.addEventListener("click", async (e) => {
+  const btn = e.target.closest("button[data-action]");
+  if (!btn) return;
+
+  const id = btn.dataset.id;
+  const action = btn.dataset.action; // approve | reject
+  btn.disabled = true;
+
+  try {
+    const res = await authFetch(`${API_BASE_URL}/api/device-requests/${id}/${action}`, {
+      method: "POST"
+    });
+    if (res.ok) {
+      await loadDeviceRequests(); // רענון הרשימה
+      // אפשר גם לרענן devices/rooms אם ברצונך לראות שינוי מיידי
+      // await loadDevices();
+      // await loadRooms();
+    } else {
+      const msg = await res.text();
+      alert(`Failed to ${action}: ${msg}`);
+    }
+  } catch (err) {
+    console.error(`Error on ${action}`, err);
+    alert(`Failed to ${action}: ${err.message}`);
+  } finally {
+    btn.disabled = false;
+  }
+});
+
