@@ -1,4 +1,5 @@
-import { authFetch, API_BASE_URL } from '../js/config.js';
+import { authFetch, API_BASE_URL } from '/client/js/config.js';
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const userId = localStorage.getItem("userId");
