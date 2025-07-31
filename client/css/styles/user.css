@@ -85,3 +85,20 @@ body.dashboard-page {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
+.section-title.with-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#add-room-btn {
+  border: none;
+  border-radius: 8px;
+  padding: 0 10px;
+  height: 32px;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+}
+#add-room-btn:hover { background: rgba(255,255,255,0.25); }

@@ -33,6 +33,31 @@ async function loadRooms(userId) {
       `;
       container.appendChild(card);
     });
+        // בתוך DOMContentLoaded, אחרי loadRooms(userId):
+      document.getElementById('add-room-btn')?.addEventListener('click', onAddRoomClick);
+
+      async function onAddRoomClick() {
+        const userId = localStorage.getItem('userId');
+        if (!userId) {
+          alert('User not logged in.');
+          return;
+        }
+
+        const name = prompt('Room name');
+        if (!name || !name.trim()) return;
+
+        try {
+          const res = await authFetch(`${API_BASE_URL}/api/rooms`, {
+            method: 'POST',
+            body: JSON.stringify({ userId, name: name.trim() })
+          });
+          // אם השרת מחזיר 201/200 – נרענן את הרשימה
+          await loadRooms(userId);
+        } catch (err) {
+          console.error('Failed to add room:', err);
+          alert('Failed to add room');
+        }
+      }
 
     // כפתור "View All"
     const viewAll = document.createElement("div");
