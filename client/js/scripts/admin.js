@@ -84,7 +84,8 @@ async function loadRooms() {
 // ---- Device Requests (Admin) ----
 async function loadDeviceRequests() {
   try {
-    const res = await authFetch(`${API_BASE_URL}/api/device-requests?status=pending`);
+    const res = await authFetch(`${API_BASE_URL}/api/device-requests`);
+
     const requests = await res.json();
 
     const list = document.getElementById("requests-list");
