@@ -27,7 +27,7 @@ async function loadRooms(userId) {
       const card = document.createElement("div");
       card.className = "room-card";
       card.innerHTML = `
-        <img src="../images/${room.image || 'startBG.jpeg'}" alt="${room.name}">
+        <img src="/images/${room.image || 'startBG.jpeg'}" alt="${room.name}">
         <h3>${room.name}</h3>
         <p>${room.devices?.length || 0} Devices</p>
       `;
