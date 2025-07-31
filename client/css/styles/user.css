@@ -24,6 +24,11 @@ position: relative;
   z-index: 1;
   border: 2px solid white;
 }
+h2,p{
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 40px;
+}
 
 /* כפתור תפריט וכפתור הגדרות בצדדים */
 .menu-btn,
@@ -141,116 +146,15 @@ position: relative;
 }
 #add-room-btn:hover { background: rgba(255,255,255,0.25); }
 
-/* עיצוב כללי למודל המוסתר/מוצג */
 .modal {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0,0,0,0.5); /* שכבת טשטוש כהה */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: rgb(250, 5, 5); /* רקע כהה שקוף */
+  display: flex;                     /* הופך את האלמנטים הפנימיים לגמישים */
+  justify-content: center;          /* מרכז אופקי */
+  align-items: center;              /* מרכז אנכי */
   z-index: 1000;
-  transition: opacity 0.3s ease;
-}
-
-.modal.hidden {
-  pointer-events: none;
-  opacity: 0;
-}
-
-/* תיבת הדיאלוג במודל */
-.modal-dialog {
-  background-color: #fff;
-  border-radius: 10px;
-  padding: 25px 30px;
-  width: 320px;
-  max-width: 90vw;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/* כותרת המודל */
-.modal-dialog h3 {
-  margin-top: 0;
-  margin-bottom: 15px;
-  font-weight: 700;
-  font-size: 1.4rem;
-  color: #222;
-  text-align: center;
-}
-
-/* טופס הוספת המכשיר */
-#add-device-form label {
-  display: block;
-  margin-bottom: 15px;
-  font-weight: 600;
-  color: #444;
-  font-size: 0.95rem;
-}
-
-/* שדות קלט */
-#add-device-form input[type="text"] {
-  width: 100%;
-  padding: 8px 12px;
-  font-size: 1rem;
-  border: 1.8px solid #bbb;
-  border-radius: 6px;
-  outline-offset: 2px;
-  transition: border-color 0.3s ease;
-}
-
-#add-device-form input[type="text"]:focus {
-  border-color: #0078d4;
-  box-shadow: 0 0 5px #0078d4;
-}
-
-/* קונטיינר הכפתורים */
-.actions {
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-/* כפתור ביטול */
-#dev-cancel {
-  background-color: transparent;
-  border: none;
-  color: #666;
-  font-weight: 600;
-  cursor: pointer;
-  padding: 8px 15px;
-  border-radius: 6px;
-  transition: background-color 0.2s ease;
-}
-
-#dev-cancel:hover {
-  background-color: #eee;
-}
-
-/* כפתור הוספה */
-#dev-submit {
-  background-color: #0078d4;
-  border: none;
-  color: white;
-  font-weight: 700;
-  cursor: pointer;
-  padding: 8px 20px;
-  border-radius: 6px;
-  transition: background-color 0.3s ease;
-}
-
-#dev-submit:hover {
-  background-color: #005ea1;
-}
-
-/* התאמה למובייל */
-@media (max-width: 400px) {
-  .modal-dialog {
-    width: 90vw;
-    padding: 20px;
-  }
 }
