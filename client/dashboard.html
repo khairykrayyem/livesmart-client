@@ -1,37 +1,55 @@
+<!-- Live‑Smart – Dashboard (single‑page) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dashboard - Live Smart</title>
-  <link rel="stylesheet" href="../css/styles/dashboard.css">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Dashboard</title>
+  <link href="/css/styles/dashboard.css?v=5" rel="stylesheet"/>
+  <script type="module" defer src="/js/scripts/dashboard.js?v=1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body>
-  <!-- כפתורי תפריט והגדרות -->
-  <header>
-      <div class="top-bar">
-       <button class="menu-btn">☰</button>
-    <img src="../images/profilepic1.jpeg" alt="profile" class="profile-image">
-    <button class="settings-btn">⚙️</button>
-      </div>
-  <div class="information-sec">
-  <!-- ברוך הבא -->
-  <h2>You're in control – users, rooms, and devices</h2>
+<body class="dashboard-grid bg">
 
-  <!-- SMART USERS -->
-  <h3>Smart Users</h3>
-  <div id="usersContainer" class="horizontal-scroll"></div>
+  <!-- Header -------------------------------------------------- -->
+  <header class="dash-header">
+    <img src="/images/logo.jpeg" alt="logo" class="logo"/>
+    <h1>Smart‑Home Dashboard</h1>
+    <button id="logout" class="btn">Logout</button>
+  </header>
 
-  <!-- DEVICES -->
-  <h3>Devices</h3>
-  <div id="devicesContainer" class="device-list"></div>
+  <!-- KPI cards ---------------------------------------------- -->
+  <section class="cards">
+    <div class="card" id="kpi-users">
+      <h3>Users</h3>
+      <p class="big" id="count-users">0</p>
+    </div>
+    <div class="card" id="kpi-rooms">
+      <h3>Rooms</h3>
+      <p class="big" id="count-rooms">0</p>
+    </div>
+    <div class="card" id="kpi-devices">
+      <h3>Devices</h3>
+      <p class="big" id="count-devices">0</p>
+    </div>
+  </section>
 
-  <!-- ROOMS -->
-  <h3>Rooms Category</h3>
-  <div id="roomsContainer" class="room-list"></div>
+  <!-- Live table --------------------------------------------- -->
+  <section class="data-table">
+    <h2>Latest Device Activity</h2>
+    <table id="activity-table">
+      <thead>
+        <tr><th>Device</th><th>Room</th><th>User</th><th>State</th><th>Time</th></tr>
+      </thead>
+      <tbody><!-- JS inject rows --></tbody>
+    </table>
+  </section>
 
-  <!-- קבצי JS -->
-  <script src="../js/scripts/dashboard.js" type="module"></script>
-</div>
+  <!-- Charts -------------------------------------------------- -->
+  <section class="charts">
+    <h2>Usage Overview</h2>
+    <canvas id="chart-devices" height="180"></canvas>
+  </section>
+
 </body>
 </html>
