@@ -153,6 +153,31 @@
     </form>
   </div>
 </div>
+<!-- Add Device Modal -->
+<div id="add-device-modal" class="modal hidden" aria-hidden="true">
+  <div class="modal-dialog">
+    <h3>Add Device</h3>
+    <form id="add-device-form">
+      <label>
+        Device name
+        <input type="text" id="ad-name" required>
+      </label>
+      <label>
+        Device type
+        <input type="text" id="ad-type" placeholder="camera / ac / vacuum" required>
+      </label>
+      <label>
+        Room
+        <select id="ad-room" required><!-- options יתמלאו ב-JS --></select>
+      </label>
+      <div class="actions">
+        <button type="button" id="ad-cancel">Cancel</button>
+        <button type="submit" id="ad-submit">Create</button>
+      </div>
+    </form>
+  </div>
+</div>
+
 
 </body>
 </html>

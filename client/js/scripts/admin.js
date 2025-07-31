@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   loadDeviceRequests()
   initAddUserModal()
   initAddRoomModal();
+   initAddDeviceModal(); 
 });
 
 async function loadUsers() {
@@ -257,6 +258,86 @@ function initAddRoomModal() {
     } catch (err) {
       console.error('Add room failed:', err);
       alert('Failed to create room: ' + err.message);
+    } finally {
+      submit.disabled = false;
+    }
+  });
+}
+
+function initAddDeviceModal() {
+  const openBtn = document.querySelector('.devices .edit-btn[data-popup="device-popup"]')
+                || document.querySelector('.devices .edit-btn');
+  const modal   = document.getElementById('add-device-modal');
+  const form    = document.getElementById('add-device-form');
+  const cancel  = document.getElementById('ad-cancel');
+  const submit  = document.getElementById('ad-submit');
+  const selRoom = document.getElementById('ad-room');
+
+  if (!openBtn || !modal || !form) return;
+
+  // פתיחה: טען חדרים לרשימה
+  openBtn.addEventListener('click', async () => {
+    try {
+      await populateRoomOptions();
+      modal.classList.remove('hidden');
+      modal.setAttribute('aria-hidden', 'false');
+      document.getElementById('ad-name')?.focus();
+    } catch (err) {
+      alert('Failed to load rooms list: ' + err.message);
+    }
+  });
+
+  cancel?.addEventListener('click', () => closeModal());
+  function closeModal() {
+    modal.classList.add('hidden');
+    modal.setAttribute('aria-hidden', 'true');
+    form.reset();
+  }
+
+  async function populateRoomOptions() {
+    selRoom.innerHTML = '<option disabled selected>Loading…</option>';
+    const res = await authFetch(`${API_BASE_URL}/api/rooms`);
+    const rooms = await res.json();
+    selRoom.innerHTML = '';
+    rooms.forEach(r => {
+      const opt = document.createElement('option');
+      opt.value = r._id;
+      opt.textContent = r.name;
+      selRoom.appendChild(opt);
+    });
+    if (!rooms.length) {
+      const opt = document.createElement('option');
+      opt.disabled = true;
+      opt.selected = true;
+      opt.textContent = 'No rooms';
+      selRoom.appendChild(opt);
+    }
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const payload = {
+      name   : document.getElementById('ad-name')?.value.trim(),
+      type   : document.getElementById('ad-type')?.value.trim(),
+      roomId : selRoom.value
+    };
+    if (!payload.name || !payload.type || !payload.roomId) {
+      alert('Fill all fields');
+      return;
+    }
+    try {
+      submit.disabled = true;
+      const res = await authFetch(`${API_BASE_URL}/api/devices`, {
+        method: 'POST',
+        body  : JSON.stringify(payload)
+      });
+      if (!res.ok) throw new Error(await res.text() || `HTTP ${res.status}`);
+      closeModal();
+      await loadDevices?.(); // רענון רשימת המכשירים
+      alert('Device created ✅');
+    } catch (err) {
+      console.error('Add device failed:', err);
+      alert('Failed to create device: ' + err.message);
     } finally {
       submit.disabled = false;
     }
