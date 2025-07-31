@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Room Page</title>
+  <link rel="stylesheet" href="../client/css/styles/RoomPage.css" />
+</head>
+<body>
+  <div class="background-overlay">
+    <div class="container">
+      <header class="room-header">
+        <img id="userProfile" class="profile-pic" src="" alt="User" />
+        <div>
+          <h1 id="roomName">Room Name</h1>
+          <p id="roomStatus" class="status"></p>
+        </div>
+      </header>
+
+      <section class="room-info">
+        <p id="roomDescription">Loading description...</p>
+        <div class="sensors">
+          <div class="sensor-box">Temperature: <span id="temperature">--</span>°C</div>
+          <div class="sensor-box">Humidity: <span id="humidity">--</span>%</div>
+        </div>
+      </section>
+
+      <section class="devices-section">
+        <h2>Devices</h2>
+        <div id="devicesContainer" class="devices-grid"></div>
+      </section>
+
+      <section class="music-player">
+        <img src="../assets/spotify.png" alt="Spotify" class="spotify-icon" />
+        <div class="song-info">
+          <span>Adam Port – Move</span>
+        </div>
+        <div class="player-buttons">
+          <button>⏮</button>
+          <button>▶️</button>
+          <button>⏭</button>
+        </div>
+      </section>
+
+      <section class="shared-users">
+        <h2>Shared Users</h2>
+        <div id="usersContainer" class="users-list"></div>
+      </section>
+
+      <button class="add-device">+ Add Device to this room</button>
+    </div>
+  </div>
+
+  <script type="module" src="../js/room.js"></script>
+</body>
+</html>
