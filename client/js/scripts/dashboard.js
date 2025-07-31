@@ -1,5 +1,5 @@
 // dashboard.js – loads data & renders KPIs, table, and chart
-import { authFetch, API_BASE_URL } from "../js/config.js";
+import { authFetch, API_BASE_URL } from "/js/config.js";
 
 // ---- DOM refs ----
 const elUsers   = document.getElementById("count-users");

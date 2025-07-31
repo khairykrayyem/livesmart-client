@@ -1,0 +1,9 @@
+/* minimal – רקע ועדכון כרטיסים */
+body.bg{background:url('/images/dashBG.jpeg') center/cover fixed;}
+.dashboard-grid{display:grid;grid-template-rows:auto auto 1fr auto;gap:24px;padding:24px;}
+.cards{display:flex;gap:16px;flex-wrap:wrap}
+.card{flex:1 1 120px;background:rgba(255,255,255,.15);border-radius:12px;padding:12px;text-align:center;color:#fff}
+.card .big{font-size:32px;margin:0}
+.data-table table{width:100%;border-collapse:collapse;color:#fff}
+.data-table th,.data-table td{padding:8px;border-bottom:1px solid rgba(255,255,255,.15)}
+.charts{max-width:600px;margin:0 auto}
