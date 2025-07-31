@@ -38,10 +38,13 @@ async function loadKPIs() {
   elDevices.textContent = d;
 }
 async function count(entity) {
-  const res = await authFetch(`${API_BASE_URL}/api/${entity}/count`);
-  const { count } = await res.json();
-  return count;
+  // example: /api/users
+  const res   = await authFetch(`${API_BASE_URL}/api/${entity}`);
+  const array = await res.json();
+  return Array.isArray(array) ? array.length : 0;
 }
+
+
 
 // ---- Activity Table ----
 async function loadActivity() {
