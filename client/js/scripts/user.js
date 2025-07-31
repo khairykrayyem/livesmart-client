@@ -1,4 +1,6 @@
-import { authFetch, API_BASE_URL } from '../js/config.js';
+import { authFetch, API_BASE_URL } from '../config.js';
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const userId = localStorage.getItem("userId");
@@ -15,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 async function loadRooms(userId) {
   try {
-    const response = await authFetch(`${API_BASE_URL}/rooms?userId=${userId}`);
+    const response = await authFetch(`${API_BASE_URL}/api/rooms?userId=${userId}`);
     const rooms = await response.json();
 
     const container = document.getElementById("rooms-container");
