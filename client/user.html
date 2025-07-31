@@ -3,43 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>user Panel - Live Smart</title>
-  <link rel="stylesheet" href="../client/css/styles/user.css" />
-  <body class="user-page">
+  <title>User Panel - Live Smart</title>
+  <link rel="stylesheet" href="../css/styles/dashboard.css" />
+  <script defer src="../js/user.js"></script>
+</head>
+<body class="dashboard-page">
 
-    <div class="admin-box">
+  <div class="admin-box">
     <header>
       <div class="top-bar">
         <img src="../images/Menuicon.jpeg" class="icon">
         <img src="../images/settingicon.jpeg" class="icon">
       </div>
-
       <div class="profile-section">
         <img src="../images/user2.jpeg" alt="profile" class="profile-image" />
-        <h2>Hi Maya</h2>
+        <h2 id="user-name">Hi User</h2>
         <p>Welcome to your smart home.</p>
       </div>
     </header>
-     <section class="section-title">Rooms Category</section>
-     <div class="rooms-grid">
-  <div class="room-card">
-    <img src="../images/startBG.jpeg" alt="Living Room">
-    <h3>Living Room</h3>
-    <p>2/7</p>
+
+    <section class="section-title">Rooms</section>
+    <div class="rooms-grid" id="rooms-container">
+      <!-- חדרים ייטענו כאן -->
+    </div>
   </div>
-  <div class="room-card">
-    <img src="../images/startBG.jpeg" alt="Guest Room">
-    <h3>Guest Room</h3>
-    <p>4/8</p>
-  </div>
-  <div class="room-card">
-    <img src="../images/laundryBG.jpeg" alt="Laundry Room">
-    <h3>Laundry Room</h3>
-    <p>0/10</p>
-  </div>
-  <div class="room-card view-all">
-    View All
-  </div>
-</div>
-     </body>
+
+</body>
 </html>
