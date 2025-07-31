@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (data.role === "admin") {
           window.location.href = "admin.html";
         } else {
-          window.location.href = "dashboard.html";
+          window.location.href = "user.html";
         }
       } else {
         errorDisplay.textContent = data.message || "Login failed";
