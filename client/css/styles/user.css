@@ -180,26 +180,12 @@ h2,p{
   height: auto;
   background: none;            /* מסיר את הרקע הכהה */
   z-index: 999;
-  display: flex;
-  justify-content: center;
+  display: block;
+  
 
 }
 
 .modal-dialog {
-  background-color: #ffe0e6;
-  border-radius: 20px;
-  padding: 40px 60px;
-  width: 90%;
-  max-width: 800px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  text-align: center;
-  pointer-events: auto; /* כן לאפשר קליקים על הטופס */
-}
-
-
-
-/*.modal-dialog {
   background-color: rgb(255, 255, 135); 
   border-radius: 20px;
   padding: 40px 60px;
@@ -208,7 +194,7 @@ h2,p{
   text-align: center;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}*/
+}
 
 .modal-dialog h3 {
   margin-top: 0;
