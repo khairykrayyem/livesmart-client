@@ -5,7 +5,8 @@ body.dashboard-page {
   font-family: system-ui, Arial, sans-serif;
   color: #fff;
   min-height: 100svh;
-  background: url('../../images/randomBG.jpeg') no-repeat center fixed;
+  background: url('../../images/randomBG.jpeg') no-repeat center center fixed;
+  background-size: cover;
 }
 .top-bar {
 position: relative;
