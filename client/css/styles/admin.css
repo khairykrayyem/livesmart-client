@@ -310,7 +310,7 @@ body.admin-page {
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
-*/
+
 .requests-list{
   background-color: #0b82fa;
   border: 1px solid #c9e4ff;
@@ -324,7 +324,41 @@ body.admin-page {
   gap: 12px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+*/
+.requests {
+  padding: 32px 20px;
+  background-color: #f0f4f8;
+}
 
+.section-title h3 {
+  font-size: 1.8rem;
+  color: #003366;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* מיכל רשימת הבקשות */
+.requests-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* כרטיס בקשה בודד */
+.device-request {
+  background-color: #f5faff;
+  border: 1px solid #c9e4ff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 94, 184, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* כותרת של כרטיס */
 .device-request-header {
   display: flex;
   justify-content: space-between;
@@ -342,6 +376,7 @@ body.admin-page {
   color: #555;
 }
 
+/* אזור הכפתורים */
 .device-request-actions {
   display: flex;
   justify-content: center;
