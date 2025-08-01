@@ -141,11 +141,11 @@ h2,p{
   font-size: 20px;
   line-height: 1;
   cursor: pointer;
-  background: rgb(14, 17, 224);
-  /*background: rgba(255,255,255,0.15);*/
+ 
+  background: rgba(255, 255, 255, 0.404);
   color: #fff;
 }
-#add-room-btn:hover { background: rgba(255,255,255,0.25); }
+#add-room-btn:hover { background:rgb(41, 44, 255); }
 
 
 .modal {
