@@ -175,6 +175,7 @@ h2,p{
   position: relative;
   bottom: 0%;     /* מציב אותו קצת מעל הקצה התחתון */
   left: 50%;
+  right : 50%;
   transform: translateX(-50%); /* מרכז אותו לרוחב */
   width: auto;
   height: auto;
