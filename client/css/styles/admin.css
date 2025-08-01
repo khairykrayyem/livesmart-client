@@ -221,7 +221,7 @@ body.admin-page {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin-top: 15px;
+  margin-top: 15px;*/
 }
 
 .request-item {
@@ -234,7 +234,7 @@ body.admin-page {
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
-.request-text {
+/*.request-text {
   font-size: 14px;
   color: #fff;
   flex-grow: 1;
@@ -258,7 +258,7 @@ body.admin-page {
   background-color: #f44336;
 }
 */
-.request-item {
+/*.request-item {
   background-color: rgb(135, 171, 218);
   border: 1px solid #fafafa;
   border-radius: 10px;
@@ -269,7 +269,7 @@ body.admin-page {
   flex-direction: column;
   gap: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  font-family: "Segoe UI", sans-serif;
+  font-family: "Segoe UI", sans-serif;*/
 }
 
 /* Make sure every line of info is stacked */
