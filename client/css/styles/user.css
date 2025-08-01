@@ -173,7 +173,7 @@ h2,p{
 }*/
 .modal {
   position: relative;
-  bottom: 30px;     /* מציב אותו קצת מעל הקצה התחתון */
+  bottom: 50px;     /* מציב אותו קצת מעל הקצה התחתון */
   left: 50%;
   transform: translateX(-50%); /* מרכז אותו לרוחב */
   width: auto;
@@ -186,7 +186,7 @@ h2,p{
 }
 
 .modal-dialog {
-  background-color: rgb(255, 255, 135); 
+  background-color: rgba(255, 255, 135, 0.61); 
   border-radius: 20px;
   padding: 40px 60px;
   width: 90%;             
