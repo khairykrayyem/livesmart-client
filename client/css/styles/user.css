@@ -196,21 +196,11 @@ h2,p{
 
 
 <<<<<<< HEAD
-#dev-submit
- {
-  background-color: #095821;
-  color: rgb(36, 80, 38);
-  padding: 10px 20px;
-  border: none;
-  border-radius: 25px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-#dev-cancel
+
+#dev-cancel,#dev-submit
 {
-  background-color: red;
-  color:red;
+  background-color: white;
+  color:blue;
   padding: 10px 20px;
   border: none;
   border-radius: 25px;
