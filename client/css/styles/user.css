@@ -173,10 +173,10 @@ h2,p{
 }*/
 .modal {
   position: fixed;
-  bottom: 0%;     /* מציב אותו קצת מעל הקצה התחתון */
+  bottom: 20%;     /* מציב אותו קצת מעל הקצה התחתון */
   left: 50%;
   transform: translateX(-50%); /* מרכז אותו לרוחב */
-  width: auto;
+  width: 100%;
   height: auto;
   background: none;            /* מסיר את הרקע הכהה */
   z-index: 999;
