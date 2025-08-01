@@ -24,7 +24,7 @@ position: relative;
   z-index: 1;
   border: 2px solid white;
 }
-h2,p{
+h2,p,h3{
   text-align: center;
   color: #e8ecf0;
   margin-bottom: 40px;
