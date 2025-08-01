@@ -150,7 +150,7 @@ async function loadWeather() {
   if (!widget) return;
   try {
     // דוגמה: lat/lon קבועים (תל אביב) – אפשר להחליף לעיר מה-LS
-    const res = await fetch(`${API_BASE_URL}/weather?city=Tel Aviv`);
+    const res = await fetch(`${API_BASE_URL}/api/weather?city=Tel Aviv`);
     const w   = await res.json();
     widget.querySelector('.city').textContent = w.city || 'Weather';
     widget.querySelector('.temp').textContent = `${w.temperature}°C`;
