@@ -1,5 +1,5 @@
 body.admin-page {
-  background:url('../../images/randomBG.jpeg');
+  background:url('../../images/randomBG.jpeg')  no-repeat center center fixed;
   margin: 0;
   font-family: 'Arial', sans-serif;
   color: white;
@@ -259,7 +259,7 @@ body.admin-page {
 }
 */
 .request-item {
-  background-color: rgb(135, 171, 218);
+  background-color: rgb(80, 141, 221);
   border: 1px solid #fafafa;
   border-radius: 10px;
   padding: 16px;
