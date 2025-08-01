@@ -172,7 +172,7 @@ h2,p{
   padding: 30px 40px; 
 }*/
 .modal {
-  position: fixed;
+  position: relative;
   bottom: 30px;     /* מציב אותו קצת מעל הקצה התחתון */
   left: 50%;
   transform: translateX(-50%); /* מרכז אותו לרוחב */
