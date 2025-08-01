@@ -311,8 +311,8 @@ body.admin-page {
   transition: background-color 0.2s ease;
 }
 */
-.device-request {
-  background-color: #f5faff;
+.requests-list{
+  background-color: #0b82fa;
   border: 1px solid #c9e4ff;
   border-radius: 12px;
   padding: 20px;
