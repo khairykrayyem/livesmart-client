@@ -259,7 +259,7 @@ body.admin-page {
   background-color: #f44336;
 }
 */
-.request-item {
+/*.request-item {
   background-color: rgb(80, 141, 221);
   border: 1px solid #fafafa;
   border-radius: 10px;
@@ -274,20 +274,20 @@ body.admin-page {
 }
 
 /* Make sure every line of info is stacked */
-.request-item p {
+/*.request-item p {
   margin: 0;
   font-size: 14px;
-  color: #ee0b0b;
-}
+  color: #333;
+}*/
 
-/* Buttons container */
+/* Buttons container 
 .request-actions {
   display: flex;
   justify-content: center;
   gap: 10px;
-}
+}*/
 
-/* Approve button */
+/* Approve button 
 .request-actions .approve {
   flex: 1;
   padding: 8px;
@@ -297,9 +297,9 @@ body.admin-page {
   border-radius: 20px;
   cursor: pointer;
   transition: background-color 0.2s ease;
-}
+}*/
 
-/* Decline button */
+/* Decline button 
 .request-actions .reject {
   flex: 1;
   padding: 8px;
@@ -310,5 +310,68 @@ body.admin-page {
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
+*/
+.device-request {
+  background-color: #f5faff;
+  border: 1px solid #c9e4ff;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 16px auto;
+  max-width: 600px;
+  box-shadow: 0 4px 8px rgba(0, 94, 184, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
+.device-request-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+.device-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #003366;
+}
+
+.request-meta {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.device-request-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.device-request button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.device-request .approve-btn {
+  background-color: #4caf50;
+  color: white;
+}
+
+.device-request .approve-btn:hover {
+  background-color: #388e3c;
+}
+
+.device-request .reject-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.device-request .reject-btn:hover {
+  background-color: #c62828;
+}
