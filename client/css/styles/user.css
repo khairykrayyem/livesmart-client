@@ -5,8 +5,7 @@ body.dashboard-page {
   font-family: system-ui, Arial, sans-serif;
   color: #fff;
   min-height: 100svh;
-  /*background: url('../../images/randomBG.jpeg') center / cover no-repeat fixed;*/ 
-  background: url('../../images/devicesBG.jpeg');
+  background: url('../../images/roompageBG.jpeg');
 }
 .top-bar {
 position: relative;
@@ -196,9 +195,13 @@ h2,p{
 =======
 /* Weather widget */
 .weather{
-  display:flex;gap:8px;align-items:center;
+  display:flex;
+  gap:8px;
+  align-items:center;
   background:rgba(255,255,255,.15);
-  border-radius:12px;padding:6px 12px;margin-top:8px;
+  border-radius:12px
+  ;padding:6px 12px;
+  margin-top:8px;
   font-size:14px;color:#fff
 }
 .weather .temp{font-size:18px;font-weight:600}
