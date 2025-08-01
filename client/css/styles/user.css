@@ -168,7 +168,7 @@ h2,p{
   gap: 15px;
   background-color: pink;
   padding: 30px 40px; */
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(146, 204, 9, 0.9);
   padding: 40px 30px;
   border-radius: 16px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
@@ -180,13 +180,26 @@ h2,p{
   flex-direction: column;
   gap: 15px;
 }
+.form-input {
+  padding: 10px 14px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #f5f5f5;
+  transition: border 0.3s;
+}
+
+.form-input:focus {
+  border: 1px solid #00c8b3;
+  outline: none;
+}
 
 
 <<<<<<< HEAD
-#dev-submit,
-#dev-cancel {
-  background-color: #007bff;
-  color: white;
+#dev-submit
+ {
+  background-color: #095821;
+  color: rgb(36, 80, 38);
   padding: 10px 20px;
   border: none;
   border-radius: 25px;
@@ -194,7 +207,17 @@ h2,p{
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-
+#dev-cancel
+{
+  background-color: red;
+  color:red;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 #dev-submit:hover,
 #dev-cancel:hover {
   background-color: #0056b3;
