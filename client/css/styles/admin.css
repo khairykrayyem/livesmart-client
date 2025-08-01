@@ -258,74 +258,62 @@ body.admin-page {
   background-color: #f44336;
 }
 */
-#add-device-form {
-  background-color: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  padding: 20px 25px;
-  max-width: 400px;
-  margin: 20px auto;
+.request-item {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 16px;
+  margin: 12px auto;
+  max-width: 320px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   font-family: "Segoe UI", sans-serif;
-  transition: 0.3s ease;
 }
 
-/* כותרת */
-#add-device-form h3 {
-  text-align: center;
-  margin-bottom: 10px;
-  font-size: 20px;
+/* Make sure every line of info is stacked */
+.request-item p {
+  margin: 0;
+  font-size: 14px;
   color: #333;
 }
 
-/* שדות הקלט */
-#add-device-form label {
-  font-size: 14px;
-  font-weight: 600;
-  color: #555;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-/* תיבות הטקסט */
-#add-device-form input[type="text"] {
-  padding: 10px 12px;
-  border: 1px solid #ccc;
-  border-radius: 12px;
-  font-size: 14px;
-  transition: border-color 0.3s ease;
-}
-
-#add-device-form input[type="text"]:focus {
-  border-color: #007bff;
-  outline: none;
-}
-
-/* כפתורים */
-.actions {
+/* Buttons container */
+.request-actions {
   display: flex;
   justify-content: space-between;
-  gap: 12px;
-  margin-top: 8px;
+  gap: 10px;
 }
 
-.actions button {
+/* Approve button */
+.request-actions .approve {
   flex: 1;
-  padding: 10px;
+  padding: 8px;
+  background-color: #4CAF50;
+  color: white;
   border: none;
   border-radius: 20px;
-  font-size: 14px;
-  font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  background-color: #007bff;
-  color: white;
+  transition: background-color 0.2s ease;
 }
 
-/* אפקט ריחוף */
-.actions button:hover {
-  background-color: #0056b3;
+/* Decline button */
+.request-actions .reject {
+  flex: 1;
+  padding: 8px;
+  background-color: #F44336;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.request-actions .approve:hover {
+  background-color: #388e3c;
+}
+
+.request-actions .reject:hover {
+  background-color: #d32f2f;
 }
