@@ -172,11 +172,12 @@ h2,p{
   padding: 30px 40px; 
 }*/
 .modal {
-  position: fixed;
-  bottom: 20%;     /* מציב אותו קצת מעל הקצה התחתון */
+  position: relative;
+  bottom: 0%;     /* מציב אותו קצת מעל הקצה התחתון */
   left: 50%;
+  right: 50%
   transform: translateX(-50%); /* מרכז אותו לרוחב */
-  width: 100%;
+  width: auto;
   height: auto;
   background: none;            /* מסיר את הרקע הכהה */
   z-index: 999;
