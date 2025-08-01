@@ -1,5 +1,5 @@
 body.admin-page {
-  background:url('../../images/randomBG.jpeg') no-repeat center center fixed;
+ background: url('../../images/randomBG.jpeg') no-repeat center center fixed;
   background-size: cover;
   margin: 0;
   font-family: 'Arial', sans-serif;
@@ -270,7 +270,6 @@ body.admin-page {
   flex-direction: column;
   gap: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  /*font-family: "Segoe UI", sans-serif;*/
   font-family: 'Arial', sans-serif;
 }
 
@@ -278,7 +277,7 @@ body.admin-page {
 .request-item p {
   margin: 0;
   font-size: 14px;
-  color: #333;
+  color: #ee0b0b;
 }
 
 /* Buttons container */
