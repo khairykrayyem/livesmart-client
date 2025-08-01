@@ -173,7 +173,7 @@ h2,p{
 }*/
 .modal {
   position: relative;
-  bottom: 50px;     /* מציב אותו קצת מעל הקצה התחתון */
+  bottom: 0%;     /* מציב אותו קצת מעל הקצה התחתון */
   left: 50%;
   transform: translateX(-50%); /* מרכז אותו לרוחב */
   width: auto;
