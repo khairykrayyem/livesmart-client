@@ -141,7 +141,8 @@ h2,p{
   font-size: 20px;
   line-height: 1;
   cursor: pointer;
-  background: rgba(255,255,255,0.15);
+  background: rgb(14, 17, 224);
+  /*background: rgba(255,255,255,0.15);*/
   color: #fff;
 }
 #add-room-btn:hover { background: rgba(255,255,255,0.25); }
