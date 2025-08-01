@@ -259,7 +259,7 @@ body.admin-page {
 }
 */
 .request-item {
-  background-color: #f0f0f0;
+  background-color: rgb(66, 130, 214);
   border: 1px solid #ccc;
   border-radius: 10px;
   padding: 16px;
