@@ -216,7 +216,7 @@ body.admin-page {
 #au-submit[disabled] { opacity: .7; cursor: progress; }
 
 
-/* Device Requests Styling */
+/* Device Requests Styling 
 .requests-list {
   display: flex;
   flex-direction: column;
@@ -225,7 +225,7 @@ body.admin-page {
 }
 
 .request-item {
-  background: rgba(79, 100, 219, 0.308);
+  background: white(79, 100, 219, 0.308);
   padding: 12px;
   border-radius: 10px;
   display: flex;
@@ -256,4 +256,76 @@ body.admin-page {
 
 .request-actions .reject {
   background-color: #f44336;
+}
+*/
+#add-device-form {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 20px 25px;
+  max-width: 400px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-family: "Segoe UI", sans-serif;
+  transition: 0.3s ease;
+}
+
+/* כותרת */
+#add-device-form h3 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #333;
+}
+
+/* שדות הקלט */
+#add-device-form label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* תיבות הטקסט */
+#add-device-form input[type="text"] {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+#add-device-form input[type="text"]:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* כפתורים */
+.actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.actions button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background-color: #007bff;
+  color: white;
+}
+
+/* אפקט ריחוף */
+.actions button:hover {
+  background-color: #0056b3;
 }
