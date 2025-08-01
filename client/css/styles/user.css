@@ -89,7 +89,8 @@ h2,p{
 .room-card h3 {
   margin: 8px 12px 4px;
   font-size: clamp(14px, 1.8vw, 18px);
-  color: #fff;
+  /*color: #fff;*/
+  color: #f70606;
 }
 
 .room-card p {
