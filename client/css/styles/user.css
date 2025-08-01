@@ -175,6 +175,12 @@ h2,p{
   width: 360px;
   text-align: center;
 }
+ .device-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
 
 <<<<<<< HEAD
 #dev-submit,
