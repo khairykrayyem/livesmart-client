@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   loadRooms(userId);
+  loadWeather(); 
 });
 
 async function loadRooms(userId) {
@@ -143,3 +144,17 @@ async function submitDevice({ roomId, name, type }) {
   }
 }
 
+// --- Weather ---
+async function loadWeather() {
+  const widget = document.getElementById("weather");
+  if (!widget) return;
+  try {
+    // דוגמה: lat/lon קבועים (תל אביב) – אפשר להחליף לעיר מה-LS
+    const res = await fetch(`${API_BASE_URL}/weather?city=Tel Aviv`);
+    const w   = await res.json();
+    widget.querySelector('.city').textContent = w.city || 'Weather';
+    widget.querySelector('.temp').textContent = `${w.temperature}°C`;
+  } catch (e) {
+    console.error('weather', e);
+  }
+}

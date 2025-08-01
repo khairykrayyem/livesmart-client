@@ -169,3 +169,12 @@ h2,p,h3{
   background-color: pink;
   padding: 30px 40px; 
 }
+
+/* Weather widget */
+.weather{
+  display:flex;gap:8px;align-items:center;
+  background:rgba(255,255,255,.15);
+  border-radius:12px;padding:6px 12px;margin-top:8px;
+  font-size:14px;color:#fff
+}
+.weather .temp{font-size:18px;font-weight:600}
