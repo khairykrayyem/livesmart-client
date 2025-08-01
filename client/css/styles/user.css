@@ -24,7 +24,7 @@ position: relative;
   z-index: 1;
   border: 2px solid white;
 }
-h2,p,h3{
+h2,p{
   text-align: center;
   color: #e8ecf0;
   margin-bottom: 40px;
@@ -168,4 +168,34 @@ h2,p,h3{
   gap: 15px;
   background-color: pink;
   padding: 30px 40px; 
+}
+
+#dev-cancel {
+  background-color: #f0f0f0;
+  color: #333;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#dev-cancel:hover {
+  background-color: #e0e0e0;
+}
+
+#dev-submit {
+  background-color: #0078d4;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#dev-submit:hover {
+  background-color: #005ea1;
 }
