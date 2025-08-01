@@ -158,7 +158,8 @@ h2,p{
 #add-device-form {
   
   border-radius: 20px;
-  max-width: 400px;
+  max-width: 600px;
+  width : 70%;
   margin: auto;
   margin-top: 20px;
   text-align: center;
