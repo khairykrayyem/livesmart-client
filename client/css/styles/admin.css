@@ -259,8 +259,8 @@ body.admin-page {
 }
 */
 .request-item {
-  background-color: rgb(66, 130, 214);
-  border: 1px solid #ccc;
+  background-color: rgb(135, 171, 218);
+  border: 1px solid #fafafa;
   border-radius: 10px;
   padding: 16px;
   margin: 12px auto;
@@ -303,17 +303,11 @@ body.admin-page {
   flex: 1;
   padding: 8px;
   background-color: #F44336;
-  color: white;
+  color: red;
   border: none;
   border-radius: 20px;
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
 
-.request-actions .approve:hover {
-  background-color: #388e3c;
-}
 
-.request-actions .reject:hover {
-  background-color: #d32f2f;
-}
