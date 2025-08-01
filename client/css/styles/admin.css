@@ -216,7 +216,7 @@ body.admin-page {
 #au-submit[disabled] { opacity: .7; cursor: progress; }
 
 
-/* ===== Device Requests Styling ===== */
+/* Device Requests Styling */
 .requests-list {
   display: flex;
   flex-direction: column;
@@ -225,7 +225,7 @@ body.admin-page {
 }
 
 .request-item {
-  background: rgba(255,255,255,0.1);
+  background: rgba(79, 100, 219, 0.308);
   padding: 12px;
   border-radius: 10px;
   display: flex;
