@@ -186,14 +186,16 @@ h2,p{
 }
 
 .modal-dialog {
-  background-color: #213849; /* ורוד בהיר ונעים */
-  border-radius: 20px;
-  padding: 40px 60px;
-  width: 90%;               /* יותר לרוחב */
-  max-width: 800px;         /* מותר לו לגדול יותר */
-  text-align: center;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: fixed;
+  bottom: 30px;     /* מציב אותו קצת מעל הקצה התחתון */
+  left: 50%;
+  transform: translateX(-50%); /* מרכז אותו לרוחב */
+  width: auto;
+  height: auto;
+  background: rgb(34, 52, 133);            /* מסיר את הרקע הכהה */
+  z-index: 999;
+  display: flex;
+  justify-content: center;
 }
 
 .modal-dialog h3 {
