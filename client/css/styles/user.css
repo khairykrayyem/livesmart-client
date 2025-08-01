@@ -180,7 +180,7 @@ h2,p{
 
 #dev-cancel
 {
-  background-color: white;
+  background-color: blue;
   color:blue;
   padding: 10px 20px;
   border: none;
@@ -189,7 +189,7 @@ h2,p{
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-#dev-submit:hover,
+
 #dev-cancel:hover {
   background-color: red;
 }
