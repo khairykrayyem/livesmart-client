@@ -220,13 +220,13 @@ body.admin-page {
 /* Device Requests Styling */
 .requests-list {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 12px;
   margin-top: 15px;
 }
 
 .request-item {
-  background: rgba(84, 121, 241, 0.938);
+  background: rgba(186, 197, 231, 0.938);
   padding: 12px;
   border-radius: 10px;
   display: flex;

@@ -148,29 +148,6 @@ h2,p{
 }
 #add-room-btn:hover { background:rgb(41, 44, 255); }
 
-
-/*.modal {
-  position: relative;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-#add-device-form {
-  
- border-radius: 20px;
-  max-width: 600px;
-  width : 70%;
-  margin: auto;
-  margin-top: 20px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  background-color: pink;
-  padding: 30px 40px; 
-}*/
 .modal {
   position: relative;
   bottom: 0%;     /* מציב אותו קצת מעל הקצה התחתון */
