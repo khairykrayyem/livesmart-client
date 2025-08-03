@@ -213,7 +213,7 @@ body.admin-page {
 
 
 /* Device Requests Styling */
-.requests-list {
+/*.requests-list {
   display: flex;
   flex-direction: row;
   gap: 12px;
@@ -230,7 +230,7 @@ body.admin-page {
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
-/*.request-text {
+.request-text {
   font-size: 14px;
   color: #fff;
   flex-grow: 1;
@@ -252,9 +252,9 @@ body.admin-page {
 
 .request-actions .reject {
   background-color: #f44336;
-}
-*/
-/*.request-item {
+}*/
+
+.request-item {
   background-color: rgb(80, 141, 221);
   border: 1px solid #fafafa;
   border-radius: 10px;
@@ -268,21 +268,19 @@ body.admin-page {
   font-family: 'Arial', sans-serif;
 }
 
-/* Make sure every line of info is stacked */
-/*.request-item p {
+.request-item p {
   margin: 0;
   font-size: 14px;
   color: #333;
-}*/
+}
 
-/* Buttons container 
+ Buttons container 
 .request-actions {
   display: flex;
   justify-content: center;
   gap: 10px;
-}*/
-
-/* Approve button 
+}
+ 
 .request-actions .approve {
   flex: 1;
   padding: 8px;
@@ -292,9 +290,9 @@ body.admin-page {
   border-radius: 20px;
   cursor: pointer;
   transition: background-color 0.2s ease;
-}*/
+}
 
-/* Decline button 
+
 .request-actions .reject {
   flex: 1;
   padding: 8px;
@@ -319,5 +317,5 @@ body.admin-page {
   gap: 12px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-*/
+
 
