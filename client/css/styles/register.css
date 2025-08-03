@@ -11,7 +11,7 @@ body.register-body {
   background-repeat: no-repeat;;
 }
 
-/*הקופסה של הטופס */
+
 .login-box {
   width: 320px;
   padding: 30px 20px;
@@ -21,7 +21,7 @@ body.register-body {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* עיגול הלוגו */
+
 .logo-circle {
   width: 100px;
   height: 100px;
@@ -32,15 +32,14 @@ body.register-body {
   justify-content: center;
 }
 .logo-image {
-  width: 80px;       /* אפשר להתאים לפי הצורך */
-  height: 80px;      /* לשמור על יחס גובה-רוחב */
-  border-radius: 50%; /* עיגול */
-  object-fit: cover;  /* כדי שהתמונה תתאים בתוך העיגול בלי עיוות */
+  width: 80px;       
+  height: 80px;     
+  border-radius: 50%; 
+  object-fit: cover;  
   display: block;
   margin: auto;
 }
 
-/* כותרת */
 .login-title {
   font-size: 24px;
   color: #333;
@@ -55,7 +54,7 @@ body.register-body {
   text-align: center;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
-/* כפתור התחברות */
+
 .login-button {
   padding: 10px;
   background-color: #0077cc;
@@ -71,13 +70,12 @@ body.register-body {
   background-color: #005fa3;
 }
 
-/* הודעת שגיאה */
 .error-message {
   color: red;
   margin-top: 10px;
   font-size: 13px;
 }
-/* טופס */
+
 .login-form {
   display: flex;
   flex-direction: column;
@@ -85,7 +83,6 @@ body.register-body {
   
 }
 
-/* שדות */
 .login-input {
   padding: 10px;
   border-radius: 6px;
