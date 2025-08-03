@@ -1,4 +1,4 @@
-/* === רקע והגדרות בסיס === */
+/*  רקע והגדרות בסיס  */
 body.user-page,
 body.dashboard-page {
   margin: 0;
@@ -30,6 +30,15 @@ h2,p{
   margin-bottom: 40px;
 }
 
+.admin-box {
+  background-color: rgba(240, 240, 240, 0.1); /* אפור שקוף */
+  border-radius: 16px;
+  padding: 20px;
+  margin: 20px auto;
+  backdrop-filter: blur(6px); /* אפקט מודרני */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  max-width: 800px;
+}
 /* כפתור תפריט וכפתור הגדרות בצדדים */
 .menu-btn,
 .settings-btn {
